@@ -10,12 +10,15 @@ import { BankAccount } from './bank-account/entities/bank-account.entity';
 import { RevenueModule } from './revenue/revenue.module';
 import { ExpenseModule } from './expense/expense.module';
 import { TransactionModule } from './transaction/transaction.module';
+import { Transaction } from './transaction/entities/transaction.entity';
+import { Revenue } from './revenue/entities/revenue.entity';
+import { Expense } from './expense/entities/expense.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'better-sqlite3',
       database: 'database.sqlite3',
-      entities: [Account, BankAccount],
+      entities: [Account, BankAccount,Transaction,Revenue,Expense],
       synchronize: true,
       //autoLoadEntities: true
     }),

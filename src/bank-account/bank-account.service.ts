@@ -18,7 +18,8 @@ export class BankAccountService {
     return `This action returns all bankAccount`;
   }
 
-  findOne(id: number) {
+  async findOne(id: number) {
+    return await this.bankAccountRepository.findOneBy({id: id})
     return `This action returns a #${id} bankAccount`;
   }
 
