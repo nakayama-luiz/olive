@@ -14,7 +14,7 @@ export class Transaction {
     value: number;
 
     @Column({enum: TransactionType})
-   type:TransactionType
+    type:TransactionType
 
     @ManyToOne(type=>BankAccount, bank=>bank.transaction)
     bankAccount: BankAccount

@@ -13,12 +13,14 @@ import { TransactionModule } from './transaction/transaction.module';
 import { Transaction } from './transaction/entities/transaction.entity';
 import { Revenue } from './revenue/entities/revenue.entity';
 import { Expense } from './expense/entities/expense.entity';
+import { InstallmentModule } from './installment/installment.module';
+import { Installment } from './installment/entities/installment.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'better-sqlite3',
       database: 'database.sqlite3',
-      entities: [Account, BankAccount,Transaction,Revenue,Expense],
+      entities: [Account, BankAccount,Transaction,Revenue,Expense,Installment],
       synchronize: true,
       //autoLoadEntities: true
     }),
@@ -26,7 +28,8 @@ import { Expense } from './expense/entities/expense.entity';
     BankAccountModule,
     RevenueModule,
     ExpenseModule,
-    TransactionModule
+    TransactionModule,
+    InstallmentModule
   ],
   controllers: [AppController],
   providers: [AppService],
